@@ -20,6 +20,7 @@ echo "<h1>hello anuj</h1>" > /var/www/html/index.html
 
 systemctl restart httpd
 
+# Testing the httpd server on port 85
 curl 192.168.0.100:85
 
 echo "httpd installation complete on port 85"
