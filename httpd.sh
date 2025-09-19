@@ -1,4 +1,7 @@
 #!/bin/bash
+# Script to install and configure httpd server on port 85
+# rewrite on /etc/httpd/conf/httpd.conf and change port to 85
+
 yum install httpd -y
 systemctl start httpd 
 systemctl enable httpd
@@ -6,6 +9,8 @@ systemctl status httpd
 
 firewall-cmd --permanent --add-service=http
 firewall-cmd --reload
+
+echo "port 85" >> /etc/httpd/conf/httpd.conf
 
 # Modifying SELinux to allow httpd to run on a non-standard port (85)
 semanage port -a -t http_port_t -p tcp 85
