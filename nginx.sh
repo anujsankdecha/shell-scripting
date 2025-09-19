@@ -7,11 +7,13 @@ systemctl enable nginx
 systemctl status nginx
 
 firewall-cmd --permanent --add-service=nginx
+firewall-cmd --permanent --add-port=80/tcp
 firewall-cmd --reload
 
 # Creating a custom index.html file
 echo "<h1>hello anuj</h1>" > /usr/share/nginx/html/index.html
 echo "<h2>Welcome to Nginx Server</h2>" >> /usr/share/nginx/html/index.html
+echo "<p>This is a sample Nginx web page.</p>" >> /usr/share/nginx/html/index.html
 systemctl restart nginx
 
 # Testing the nginx server on port 80
