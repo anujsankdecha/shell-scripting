@@ -1,11 +1,12 @@
 #!/bin/bash
 # Script to install and configure httpd server on port 85
-# rewrite on /etc/httpd/conf/httpd.conf and change port to 85
 
 yum install httpd -y
 systemctl start httpd 
 systemctl enable httpd
 systemctl status httpd
+
+# rewrite on /etc/httpd/conf/httpd.conf and change port to 85
 
 firewall-cmd --permanent --add-service=http
 firewall-cmd --reload
