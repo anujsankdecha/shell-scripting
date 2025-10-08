@@ -17,14 +17,5 @@ sudo systemctl status postgresql
 #creating user and database
 su postgres
 psql 
-create user sonar with password 'sonar';
-create database sonardb;
-grant all privileges on database sonardb to sonar;
-\l
-alter database sonardb owner to sonar;
-\l
-exit
 
-#sonarqube instalation
-psql -U sonar -d sonardb -h 127.0.0.1 -W
-sonar
+# after entering psql shell, done by self
