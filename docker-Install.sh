@@ -13,6 +13,10 @@ systemctl status docker
 docker run -dit --name webserver -p 80:80 httpd:latest  
 docker ps -a
 
+docker rm -f webserver
+docker image rm httpd:latest
+docker rmi $(docker images -a -q)
+
 # Checking the installed Docker version
 docker --version    
 
